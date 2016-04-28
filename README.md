@@ -1,2 +1,5 @@
-# Neemaa-Back
-Projet NEEMAA de BackOffice
+# NEEMAA
+
+composer install
+
+php app/console server:run
