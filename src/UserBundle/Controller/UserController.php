@@ -52,9 +52,39 @@ class UserController extends Controller
 
       $lexik_manager = $this->container->get('lexik_jwt_authentication.jwt_manager');
       $token = $lexik_manager->create($user) ;
-      $response = new Response(json_encode(array('response' => "done",'data'=>  array('token' => $token ))));
+      $response = new Response(json_encode(array('response' => "OK",'data'=>  array('token' => $token ))));
       $response->headers->set('Content-Type', 'application/json');
       return  $response;
+
+  }
+
+  /**
+  *
+  * @Route("/get/token", name="get_token")
+  * @Method("POST")
+  */
+  public function getTokenAction(Request $request)
+  {
+    $email  = $request->request->get('email');
+
+    if(  ! $this->isValidEmail($email) ){
+      $response = new Response(json_encode(array('response' => "NOK")));
+      $response->headers->set('Content-Type', 'application/json');
+      return  $response;
+    }
+
+   if ( ! $this->checkUser($email)) {
+      $response = new Response(json_encode(array('response' => "user_does_not_exist")));
+      $response->headers->set('Content-Type', 'application/json');
+      return  $response;
+    }
+      $user = $this->get('fos_user.user_manager')->findUserByEmail($email);
+      $lexik_manager = $this->container->get('lexik_jwt_authentication.jwt_manager');
+      $token = $lexik_manager->create($user) ;
+      $response = new Response(json_encode(array('response' => "OK",'data'=>  array('token' => $token ))));
+      $response->headers->set('Content-Type', 'application/json');
+      return  $response;
+
 
   }
 
