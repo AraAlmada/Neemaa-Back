@@ -45,16 +45,18 @@ class UserController extends Controller
       $user->setUsername($email);
       $user->setEmail($email);
       $user->setPlainPassword($password);
-      $user->setEnabled(true);
-      $user->addRole('ROLE_USER');
+      $user->setEnabled(false);
+
+      $tokenGenerator = $this->container->get('fos_user.util.token_generator');
+      $user->setConfirmationToken($tokenGenerator->generateToken());
 
       $user_manager->updateUser($user);
 
-      $lexik_manager = $this->container->get('lexik_jwt_authentication.jwt_manager');
-      $token = $lexik_manager->create($user) ;
-      $response = new Response(json_encode(array('response' => "OK",'data'=>  array('token' => $token ))));
-      $response->headers->set('Content-Type', 'application/json');
-      return  $response;
+
+
+      return  $this->forward('UserBundle:User:remind', array(
+        'email'  => $email,
+    ));
 
   }
 
@@ -87,6 +89,43 @@ class UserController extends Controller
 
 
   }
+
+
+  /**
+   * resend confirmation email
+   * @Route("/{email}")
+   * @Method("POST")
+   */
+  public function remindAction($email)
+  {
+    if ( ! $this->checkUser($email)) {
+       $response = new Response(json_encode(array('response' => "user_does_not_exist")));
+       $response->headers->set('Content-Type', 'application/json');
+       return  $response;
+     }
+
+      $user = $this->get('fos_user.user_manager')->findUserByEmail($email);
+      $url = $this->generateUrl('fos_user_registration_confirm', array('token' => $user->getConfirmationToken()), true);
+
+      $message = \Swift_Message::newInstance()
+              ->setSubject('Registration confirmation')
+              ->setFrom('neemaa.test@gmail.com')
+              ->setTo($email)
+              ->setContentType('text/html')
+              ->setBody(
+              $this->renderView(
+                      "UserBundle:Registration:confirmationEmail.html.twig", array(
+                  'user' => $user,
+                  'confirmationUrl' => $url))
+              );
+      $sent = $this->get('mailer')->send($message);
+
+      $response = new Response(json_encode(array('response' => "OK",'data'=>  array('sent' => $sent ))));
+      $response->headers->set('Content-Type', 'application/json');
+      return  $response;
+
+  }
+
 
   /**
    * @param string     $email
