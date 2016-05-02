@@ -21,51 +21,6 @@ class DefaultController extends Controller
         ));
     }
 
-    /**
-    *
-    * @Route("/create", name="create_user")
-    * @Method("POST")
-    */
-    public function createUserAction(Request $request)
-    {
-
-
-        $email      = $request->request->get('email');
-        $password   = $request->request->get('password');
-
-        if ($this->checkUser($email)) {
-
-          $response = new Response(json_encode(array('response' => "already_exist")));
-          $response->headers->set('Content-Type', 'application/json');
-          return  $response;
-        }
-
-        $user_manager = $this->container->get('fos_user.user_manager');
-
-        $user = $user_manager->createUser();
-        $user->setUsername($email);
-        $user->setEmail($email);
-        $user->setPlainPassword($password);
-        $user->setEnabled(true);
-        $user->addRole('ROLE_USER');
-
-        $user_manager->updateUser($user);
-
-        $response = new Response(json_encode(array('response' => "ok")));
-        $response->headers->set('Content-Type', 'application/json');
-        return  $response;
-
-    }
-
-
-    private function checkUser($email)
-    {
-      $user = $this->get('fos_user.user_manager')->findUserByEmail($email);
-      if ($user)
-        return true;
-      else
-        return false;
-    }
-
+  
 
 }
