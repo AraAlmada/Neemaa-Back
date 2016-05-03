@@ -25,7 +25,12 @@ security:
         api:
             pattern:   ^/api
             stateless: true
-            lexik_jwt: ~
+            lexik_jwt:
+              authorization_header: # check token in Authorization Header
+                enabled: false
+              query_parameter:      # check token in query string parameter
+                enabled: true
+                name:    token
 
         main:
             pattern: ^/

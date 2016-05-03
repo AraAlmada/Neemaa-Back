@@ -19,7 +19,7 @@ class AppKernel extends Kernel
             new UserBundle\UserBundle(),
             new FOS\UserBundle\FOSUserBundle(),
             new Lexik\Bundle\JWTAuthenticationBundle\LexikJWTAuthenticationBundle(),
-            //new Nelmio\CorsBundle\NelmioCorsBundle(),
+            new Nelmio\CorsBundle\NelmioCorsBundle(),
             new JMS\SerializerBundle\JMSSerializerBundle(),
             new FOS\RestBundle\FOSRestBundle(),
 
