@@ -67,7 +67,8 @@ class UserController extends Controller
   */
   public function getTokenAction(Request $request)
   {
-    $email  = $request->request->get('email');
+     $email  = $request->request->get('email');
+     $password  = $request->request->get('password');
 
     if(  ! $this->isValidEmail($email) ){
       $response = new Response(json_encode(array('response' => "NOK")));
@@ -80,7 +81,23 @@ class UserController extends Controller
       $response->headers->set('Content-Type', 'application/json');
       return  $response;
     }
+
       $user = $this->get('fos_user.user_manager')->findUserByEmail($email);
+
+      $encoder_service = $this->get('security.encoder_factory');
+      $encoder = $encoder_service->getEncoder($user);
+      $encoded_pass = $encoder->encodePassword($password, $user->getSalt());
+
+      if ( $user->getPassword() != $encoded_pass) {
+        $response = new Response(json_encode(array('response' => "wrong_pass")));
+        $response->headers->set('Content-Type', 'application/json');
+        return  $response;
+      }
+      if (! $user->isEnabled()) {
+        $response = new Response(json_encode(array('response' => "NOT_ENABLED")));
+        $response->headers->set('Content-Type', 'application/json');
+        return  $response;
+      }
       $lexik_manager = $this->container->get('lexik_jwt_authentication.jwt_manager');
       $token = $lexik_manager->create($user) ;
       $response = new Response(json_encode(array('response' => "OK",'data'=>  array('token' => $token ))));
@@ -125,7 +142,6 @@ class UserController extends Controller
       return  $response;
 
   }
-
 
   /**
    * @param string     $email
