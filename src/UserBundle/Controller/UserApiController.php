@@ -36,7 +36,12 @@ class UserApiController extends Controller
     $user->setLastName($lastName);
     $user->setSex($sex);
     $user->setCodePostal($codePostal);
-    $user->setBirthdate($birthdate);
+    try {
+      $birthdate = new \DateTime($birthdate);
+          $user->setBirthdate($birthdate);
+    } catch (Exception $e) {
+    }
+
     $user->setSkinType($skinType);
     $user->setSkinColor($skinColor);
     $user->setHairType($hairType);
