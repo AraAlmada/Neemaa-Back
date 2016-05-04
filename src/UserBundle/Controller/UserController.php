@@ -110,7 +110,7 @@ class UserController extends Controller
 
   /**
    * resend confirmation email
-   * @Route("/{email}")
+   * @Route("/send/{email}")
    * @Method("POST")
    */
   public function remindAction($email)
