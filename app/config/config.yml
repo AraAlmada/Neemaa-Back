@@ -100,12 +100,12 @@ nelmio_cors:
         hosts: ['*']
         origin_regex: false
     paths:
-        '^/api/':
+        '\^/api/':
             allow_origin: ['*']
             allow_headers: ['X-Custom-Auth']
             allow_methods: ['POST', 'PUT', 'GET', 'DELETE']
             max_age: 3600
-        '^/':
+        '\^/':
             origin_regex: true
             allow_origin: ['^http://localhost:[0-9]+']
             allow_headers: ['X-Custom-Auth']
@@ -125,7 +125,7 @@ jms_serializer:
 fos_rest:
     format_listener:
         rules:
-            - { path: '^/api', priorities: ['json'], fallback_format: json, prefer_extension: false }
+            - { path: '^/api', priorities: ['html'], fallback_format: json, prefer_extension: false }
             - { path: '^/', priorities: ['html'], fallback_format: html, prefer_extension: false }
     view:
         view_response_listener: force
