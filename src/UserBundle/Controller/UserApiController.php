@@ -29,6 +29,8 @@ class UserApiController extends Controller
     $skinColor  = $request->request->get('skin_color');
     $hairType  = $request->request->get('hair_type');
     $hairColor  = $request->request->get('hair_color');
+    $phone  = $request->request->get('phone');
+    $address  = $request->request->get('address');
 
     $user = $this->get('security.token_storage')->getToken()->getUser();
 
@@ -37,15 +39,21 @@ class UserApiController extends Controller
     $user->setSex($sex);
     $user->setCodePostal($codePostal);
     try {
-      $birthdate = new \DateTime($birthdate);
+      if ($this->validateDateFormat($birthdate)) {
+          $birthdate = new \DateTime($birthdate);
           $user->setBirthdate($birthdate);
+      }
+
     } catch (Exception $e) {
+
     }
 
     $user->setSkinType($skinType);
     $user->setSkinColor($skinColor);
     $user->setHairType($hairType);
     $user->setHairColor($hairColor);
+    $user->setPhone($phone);
+    $user->setAddress($address);
 
     $user_manager = $this->container->get('fos_user.user_manager');
     $user_manager->updateUser($user);
@@ -72,5 +80,15 @@ class UserApiController extends Controller
     $response = new Response(json_encode(array('response' => 'OK', 'data'=> $jsonContent)));
     $response->headers->set('Content-Type', 'application/json');
     return  $response;
+  }
+
+  private function validateDateFormat($date)
+  {
+    if (preg_match("/^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1])$/",$date))
+    {
+        return true;
+    }else{
+        return false;
+    }
   }
 }

@@ -88,6 +88,27 @@ class User extends BaseUser
     private $hairColor;
 
     /**
+     * @var string
+     *
+     * @ORM\Column(name="phone", type="string", length=255, nullable=true)
+     */
+    private $phone;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="address", type="string", length=255, nullable=true)
+     */
+    private $address;
+
+    /**
+     * @var boolval
+     *
+     * @ORM\Column(name="partner", type="boolean", nullable=false)
+     */
+    private $partner;
+
+    /**
      * Get id
      *
      * @return int
@@ -102,7 +123,7 @@ class User extends BaseUser
      *
      * @param string $firstName
      *
-     * @return Post
+     * @return User
      */
     public function setFirstName($firstName)
     {
@@ -126,7 +147,7 @@ class User extends BaseUser
      *
      * @param string $lastName
      *
-     * @return Post
+     * @return User
      */
     public function setLastName($lastName)
     {
@@ -150,7 +171,7 @@ class User extends BaseUser
      *
      * @param string $sex
      *
-     * @return Post
+     * @return User
      */
     public function setSex($sex)
     {
@@ -170,11 +191,11 @@ class User extends BaseUser
     }
 
     /**
-     * Set codePostal
+     * Set codeUseral
      *
-     * @param integer $codePostal
+     * @param integer $codeUseral
      *
-     * @return Post
+     * @return User
      */
     public function setCodePostal($codePostal)
     {
@@ -184,7 +205,7 @@ class User extends BaseUser
     }
 
     /**
-     * Get codePostal
+     * Get codeUseral
      *
      * @return int
      */
@@ -198,7 +219,7 @@ class User extends BaseUser
      *
      * @param \DateTime $birthdate
      *
-     * @return Post
+     * @return User
      */
     public function setBirthdate($birthdate)
     {
@@ -222,7 +243,7 @@ class User extends BaseUser
      *
      * @param string $skinType
      *
-     * @return Post
+     * @return User
      */
     public function setSkinType($skinType)
     {
@@ -246,7 +267,7 @@ class User extends BaseUser
      *
      * @param string $skinColor
      *
-     * @return Post
+     * @return User
      */
     public function setSkinColor($skinColor)
     {
@@ -270,7 +291,7 @@ class User extends BaseUser
      *
      * @param string $hairType
      *
-     * @return Post
+     * @return User
      */
     public function setHairType($hairType)
     {
@@ -294,7 +315,7 @@ class User extends BaseUser
      *
      * @param string $hairColor
      *
-     * @return Post
+     * @return User
      */
     public function setHairColor($hairColor)
     {
@@ -311,5 +332,77 @@ class User extends BaseUser
     public function getHairColor()
     {
         return $this->hairColor;
+    }
+
+    /**
+     * Set phone
+     *
+     * @param string $phone
+     *
+     * @return User
+     */
+    public function setPhone($phone)
+    {
+        $this->phone = $phone;
+
+        return $this;
+    }
+
+    /**
+     * Get phone
+     *
+     * @return string
+     */
+    public function getPhone()
+    {
+        return $this->phone;
+    }
+
+    /**
+     * Set partner
+     *
+     * @param boolean $partner
+     *
+     * @return User
+     */
+    public function setPartner($partner)
+    {
+        $this->partner = $partner;
+
+        return $this;
+    }
+
+    /**
+     * Get partner
+     *
+     * @return boolean
+     */
+    public function isPartner()
+    {
+        return $this->partner;
+    }
+
+    /**
+     * Set address
+     *
+     * @param string $address
+     *
+     * @return User
+     */
+    public function setAddress($address)
+    {
+        $this->address = $address;
+
+        return $this;
+    }
+
+    /**
+     * Get address
+     *
+     * @return string
+     */
+    public function getAddress()
+    {
+        return $this->address;
     }
 }
