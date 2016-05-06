@@ -31,6 +31,7 @@ class UserApiController extends Controller
     $hairColor  = $request->request->get('hair_color');
     $phone  = $request->request->get('phone');
     $address  = $request->request->get('address');
+    $partner  = $request->request->get('partner');
 
     $user = $this->get('security.token_storage')->getToken()->getUser();
 
@@ -54,6 +55,9 @@ class UserApiController extends Controller
     $user->setHairColor($hairColor);
     $user->setPhone($phone);
     $user->setAddress($address);
+    $user->setPartner((bool)$partner);
+
+
 
     $user_manager = $this->container->get('fos_user.user_manager');
     $user_manager->updateUser($user);
