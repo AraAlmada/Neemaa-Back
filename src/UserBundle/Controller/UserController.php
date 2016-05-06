@@ -46,6 +46,7 @@ class UserController extends Controller
       $user->setEmail($email);
       $user->setPlainPassword($password);
       $user->setEnabled(false);
+      $user->setPartner(false);
 
       $tokenGenerator = $this->container->get('fos_user.util.token_generator');
       $user->setConfirmationToken($tokenGenerator->generateToken());
