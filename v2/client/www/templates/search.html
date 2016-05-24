@@ -1,0 +1,72 @@
+<ion-view view-title="Neemaa">
+  <ion-content class="content-app">
+    <div class="row text-center">
+      <div class="col">
+        <h3 class="white-text">RENDEZ-VOUS A L'INSTANT</h3>
+      </div>
+    </div>
+    <div class="row text-center">
+      <div class="col">
+        <p class="white-text">Avec les meilleurs prestataires de la beauté afro</p>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col">
+        <div class="list">
+          <label class="item item-input">
+            <input type="text" placeholder="* Ou tu veux la prestation ? Code Postal" data-ng-model="searchF.cp">
+          </label>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col">
+        <div class="list">
+          <select data-ng-model="searchF.service" class="search-select-form">
+            <option value="" disabled selected>* Service souhaité</option>
+            <option value="" disabled>Cheveux</option>
+            <option value="Brunching sur Tissage/ extension">Brunching sur Tissage/ extension</option>
+            <option value="Brunshing cheveux naturelle">Brunshing cheveux naturelle</option>
+            <option value="Chignons">Chignons</option>
+            <option value="Coiffure Artistique">Coiffure Artistique</option>
+            <option value="Coiffure de mariage">Coiffure de mariage</option>
+            <option value="Coloration">Coloration</option>
+            <option value="Coupe">Coupe</option>
+            <option value="Crochets braids">Crochets braids</option>
+            <option value="Défrisage">Défrisage</option>
+            <option value="Extensions de cheveux">Extensions de cheveux</option>
+            <option value="Goddess locs">Goddess locs</option>
+            <option value="Lissage (Brushing, Defrisage)">Lissage (Brushing, Defrisage)</option>
+            <option value="Locks">Locks</option>
+            <option value="Pose de Perruque / Lace Wig">Pose de Perruque / Lace Wig</option>
+            <option value="Shampoing">Shampoing</option>
+            <option value="Soins">Soins</option>
+            <option value="Tissages">Tissages</option>
+            <option value="Tresses">Tresses</option>
+            <option value="Vanilles">Vanilles</option>
+            <option value="" disabled>Peau</option>
+            <option value="Maquillage Evenement">Maquillage Evenement</option>
+            <option value="Maquillage Quotidien">Maquillage Quotidien</option>
+            <option value="" disabled>Mains/Pieds</option>
+            <option value="Manicure">Manicure</option>
+            <option value="Pedicure">Pedicure</option>
+            <option value="" disabled>Life-Style</option>
+            <option value="Coach Fitness">Coach Fitness</option>
+            <option value="Consultante Image">Consultante Image</option>
+            <option value="Dieteticienne">Dieteticienne</option>
+            <option value="Massage">Massage</option>
+            <option value="Personal Shopper">Personal Shopper</option>
+          </select>
+          <p class="white-text">* Champs obligatoire</p>
+        </div>
+      </div>
+    </div>
+
+  </ion-content>
+
+  <div class="bar bar-footer">
+    <button class="footer-button" data-ng-click="searchForm(searchF)">Rechercher</button>
+  </div>
+</ion-view>

@@ -1,0 +1,211 @@
+/* FONT POLICE */
+@import url(https://fonts.googleapis.com/css?family=Philosopher);
+@import url(https://fonts.googleapis.com/css?family=Overlock);
+
+/* APP CSS */
+a {
+  color: #eba8bc !important;
+}
+
+.bar-header {
+  background-color: white !important;
+}
+
+.bar-footer {
+  background-color: #b55370 !important;
+  height: 12% !important;
+}
+
+.ion-navicon {
+  text-align: center !important;
+  color: #b55370 !important;
+}
+
+.header-item {
+  font-family: 'Philosopher', sans-serif;
+  font-size: 7vw !important;
+  color: #B14967 !important;
+  font-weight: bold !important;
+}
+
+.back-item {
+  font-family: 'Overlock', cursive;
+  font-size: 4vw !important;
+}
+
+.content-app {
+  background-color: #b55370 !important;
+  font-family: 'Overlock', cursive;
+  padding: 15px;
+}
+
+.content-profil-neemstyler {
+  background-color: #FFEEED !important;
+  font-family: 'Overlock', cursive;
+  padding: 15px;
+}
+
+.white-text {
+  color: white !important;
+}
+
+.footer-button {
+  margin-right: auto;
+  margin-left: auto;
+  height: 10%;
+  background-color: #5C2542;
+  border: none;
+  border-radius: 10px;
+  padding-left: 25% !important;
+  padding-right: 25% !important;
+  padding-top: 2% !important;
+  padding-bottom: 12%!important;
+  font-size: 7vw !important;
+  font-weight: bold !important;
+  color: white !important;
+}
+
+.item-content {
+  color: black !important;
+}
+
+/* HOMEPAGE CSS */
+.home-form {
+  margin: 10px;
+}
+
+.home-checkbox {
+  background-color: transparent !important;
+  border: none;
+  color: white !important;
+}
+
+/* PROFIL USER PAGE CSS */
+.profil-user-form-text {
+  width: 100% !important;
+  padding: 5px !important;
+}
+
+.color1 {
+  width: 100%;
+  background-color: #fad2d0;
+}
+
+.color2 {
+  width: 100%;
+  background-color: #f2b8ad;
+}
+
+.color3 {
+  width: 100%;
+  background-color: #edc192;
+}
+
+.color4 {
+  width: 100%;
+  background-color: #d9ae7b;
+}
+
+.color5 {
+  width: 100%;
+  background-color: #c0946f;
+}
+
+.color6 {
+  width: 100%;
+  background-color: #9c6c44;
+}
+
+.color7 {
+  width: 100%;
+  background-color: #7F553D;
+}
+
+.color8 {
+  width: 100%;
+  background-color: #674230;
+}
+
+.color9 {
+  width: 100%;
+  background-color: #3C1F0F;
+}
+
+.color10 {
+  width: 100%;
+  background-color: #2E2520;
+}
+
+.row {
+  padding: 0 !important;
+}
+
+.profil-user-select-form {
+  width: 100%;
+}
+
+/* PROFIL NEEM PAGE CSS */
+.profil-neem-form-text {
+  width: 100% !important;
+  height: 20px !important;
+  padding: 5px !important;
+}
+
+.footer-button-neemstyler {
+  margin-right: auto;
+  margin-left: auto;
+  height: 10%;
+  background-color: #F4B9C9;
+  border: none;
+  border-radius: 10px;
+  padding-left: 25% !important;
+  padding-right: 25% !important;
+  padding-top: 2% !important;
+  padding-bottom: 12%!important;
+  font-size: 7vw !important;
+  font-weight: bold !important;
+  color: white !important;
+}
+
+.neem-checkbox {
+  background-color: #FFEEED !important;
+  border: none;
+  color: white !important;
+}
+
+.bar-footer-neemstyler {
+  background-color: #FFEEED !important;
+  height: 12% !important;
+}
+
+/* Search CSS */
+.search-select-form {
+  width: 100%;
+  padding: 4%;
+  background-color: white;
+}
+
+/* LIST NEEM CSS */
+.list-item {
+  background-color: #b55370 !important;
+  border-left: none;
+  border-right: none;
+}
+
+.list-name-item {
+  color: #EFB0C3 !important;
+}
+
+/* NeemStyler Info CSS */
+.content-app-neem-info {
+  padding: 10% !important;
+}
+
+.neem-info-name {
+  color: #F3B8C9;
+  font-weight: bold;
+  font-size: 5vw;
+  font-family: Philosopher sans-serif;
+}
+
+

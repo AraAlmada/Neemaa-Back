@@ -1,0 +1,28 @@
+<ion-view view-title="Neemaa">
+  <ion-content class="content-app">
+    <p class="white-text">NeemStyler disponible selon ta localisation</p><p class="text-center white-text">{{listNeemstyler.cp}}</p>
+
+    <ion-list>
+      <ion-item class="list-item" data-ng-repeat="list in listNeemstyler">
+        <div class="row" data-ng-click="neemStylerSelected(list.society)">
+          <div class="col text-left">
+            <div class="row">
+              <span class="list-name-item">{{list.society}}</span>
+            </div>
+            <div class="row white-text">
+              Service: N/A
+            </div>
+            <div class="row white-text">
+              <i class="ion ion-star"></i> 25 avis
+            </div>
+          </div>
+          <div class="col white-text text-right">
+            >
+          </div>
+        </div>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+
+
+</ion-view>

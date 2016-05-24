@@ -1,0 +1,98 @@
+<ion-view view-title="Neemaa">
+  <ion-content class="content-app content-app-neem-info">
+    <div class="row">
+      <div class="col col-33">
+        <div class="row">
+          <div class="col">
+            <img src="img/profil_user_default.png" style="width: 100%;border-radius: 50%" />
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <i class="ion-ios-star"></i>
+            <i class="ion-ios-star"></i>
+            <i class="ion-ios-star"></i>
+            <i class="ion-ios-star"></i>
+            <i class="ion-ios-star"></i>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="row">
+          <div class="col">
+            <span class="neem-info-name">{{ neemSelected.society }}</span>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col white-text">
+            Adress:
+          </div>
+        </div>
+        <div class="row">
+          <div class="col white-text">
+            {{ neemSelected.adress }}
+          </div>
+        </div>
+        <div class="row">
+          <div class="col white-text">
+            {{ neemSelected.cp }} {{ neemSelected.city }}
+          </div>
+        </div>
+        <div class="row">
+        <div class="col white-text">
+          <input type="checkbox" class="neem-info-checkbox-circle" data-ng-checked="neemSelectedHome()"  disabled/>À domicile
+          <input type="checkbox" class="neem-info-checkbox-circle" data-ng-checked="neemSelectedSaloon()" style="margin-left: 5px;" disabled/>En salon
+        </div>
+      </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col">
+        <img src="img/profil-neem-picture-service-black.png" style="width: 100%" />
+      </div>
+      <div class="col">
+        <img src="img/profil-neem-picture-service-black.png" style="width: 100%" />
+      </div>
+      <div class="col">
+        <img src="img/profil-neem-picture-service-black.png" style="width: 100%" />
+      </div>
+      <div class="col">
+        <img src="img/profil-neem-picture-service-black.png" style="width: 100%" />
+      </div>
+      <div class="col">
+        <img src="img/profil-neem-picture-service-black.png" style="width: 100%" />
+      </div>
+    </div>
+
+    <div class="row" style="margin: 15px;">
+      <span class="neem-info-name">Services:</span>
+    </div>
+    <div class="row">
+      <div class="col col-33">
+        <div class="row" style="margin: 5px">
+          <input type="checkbox" class="neem-info-checkbox-circle" disabled /><span class="white-text">Tissage XX€</span>
+        </div>
+        <div class="row" style="margin: 5px">
+          <input type="checkbox" class="neem-info-checkbox-circle" disabled /><span class="white-text">Lissage XX€</span>
+        </div>
+        <div class="row" style="margin: 5px">
+          <input type="checkbox" class="neem-info-checkbox-circle" disabled /><span class="white-text">Soins XX€</span>
+        </div>
+      </div>
+      <div class="col col-33">
+        <div class="row" style="margin: 5px">
+          <input type="checkbox" class="neem-info-checkbox-circle" disabled /><span class="white-text">Nattes XX€</span>
+        </div>
+        <div class="row" style="margin: 5px">
+          <input type="checkbox" class="neem-info-checkbox-circle" disabled /><span class="white-text">Rastas XX€</span>
+        </div>
+      </div>
+    </div>
+
+  </ion-content>
+
+  <div class="bar bar-footer">
+    <button class="footer-button" data-ng-click="loginUser(loginUser)">Confirmer</button>
+  </div>
+</ion-view>

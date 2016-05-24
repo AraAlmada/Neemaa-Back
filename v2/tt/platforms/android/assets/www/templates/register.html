@@ -1,0 +1,34 @@
+<ion-view view-title="Neemaa">
+  <ion-content class="content-app">
+    <h4 class="white-text">Créer ton compte:</h4>
+    <div class="list">
+      <label class="item item-input home-form">
+        <input type="text" placeholder="Prénom" data-ng-model="registerUser.firstname">
+      </label>
+      <label class="item item-input home-form">
+        <input type="tel" placeholder="Nom" data-ng-model="registerUser.lastname">
+      </label>
+      <label class="item item-input home-form">
+        <input type="tel" placeholder="Téléphone" data-ng-model="registerUser.telephone">
+      </label>
+      <label class="item item-input home-form">
+        <input type="email" placeholder="Email" data-ng-model="registerUser.email">
+      </label>
+      <label class="item item-input home-form">
+        <input type="password" placeholder="Mot de passe" data-ng-model="registerUser.password">
+      </label>
+      <label class="item item-input home-form">
+        <input type="password" placeholder="Confirmer mot de passe" data-ng-model="registerUser.password_confirmation">
+      </label>
+      <label class="item item-input home-form" data-ng-if="ifNeemStyler()">
+        <input type="text" placeholder="Societe" data-ng-model="registerUser.society">
+      </label>
+      <ion-checkbox class="home-checkbox white-text" data-ng-click="neemStyler()">Je veux m'inscrire en tant que NeemStyler !</ion-checkbox>
+    </div>
+    <div class="white-text">Déja inscrit, cliquer <a ui-sref="app.login">ICI</a></div>
+  </ion-content>
+
+  <div class="bar bar-footer">
+    <button class="footer-button" data-ng-click="registerUser(registerUser)">Confirmer</button>
+  </div>
+</ion-view>

@@ -1,0 +1,133 @@
+<ion-view view-title="Neemaa">
+  <ion-content class="content-app">
+    <div class="list">
+      <div class="row">
+        <div class="col">
+          <div class="row">
+            <div class="col text-center">
+              <img src="img/profil_user_default.png" style="width: 100%; border-radius: 50%">
+              <a>Editer</a>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <ion-list>
+                <ion-checkbox class="home-checkbox" data-ng-checked="isCheckedFemale()" data-ng-model="updateProfilUserN.sex.f" data-ng-click="profilUserCheckboxFemale()">Femme</ion-checkbox>
+                <ion-checkbox class="home-checkbox" data-ng-checked="isCheckedMale()" data-ng-model="updateProfilUserN.sex.h" data-ng-click="profilUserCheckboxMale()">Homme</ion-checkbox>
+              </ion-list>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="row">
+            <div class="col profil-col-form">
+              <input type="text" data-ng-model="updateProfilUserN.firstname" class="profil-user-form-text" placeholder="Prénom" />
+            </div>
+          </div>
+          <div class="row">
+            <div class="col profil-col-form">
+              <input type="text" data-ng-model="updateProfilUserN.lastname" class="profil-user-form-text" placeholder="Nom" />
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <input type="text" data-ng-model="updateProfilUserN.email" class="profil-user-form-text" placeholder="E-mail" />
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <input type="tel" data-ng-model="updateProfilUserN.telephone" class="profil-user-form-text" placeholder="Mobile" />
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <input type="text" data-ng-model="updateProfilUserN.adress" class="profil-user-form-text" placeholder="Adresse" />
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <input type="text" data-ng-model="updateProfilUserN.cp" class="profil-user-form-text" placeholder="Code Postal" />
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <input type="date" data-ng-model="updateProfilUserN.birthdate" class="profil-user-form-text" placeholder="Date de naissance" /><br>
+              <a ui-sref="app.recovery" class="right">Changer de mot de passe</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col">
+          <select data-ng-model="updateProfilUserN.carnation_type" class="profil-user-select-form">
+            <option value="" disabled selected>Type de peau</option>
+            <option>Normale</option>
+            <option>Sèche</option>
+            <option>Mixte</option>
+            <option>Grasse</option>
+            <option>Grasse à tendance acnéique</option>
+            <option>Hyper pigmentée</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col">
+          <select data-ng-model="updateProfilUserN.carnation_color" id="profil-select-color" class="profil-user-select-form">
+            <option value="" disabled selected>Carnation</option>
+            <option class="color1" value="1"></option>
+            <option class="color2" value="2"></option>
+            <option class="color3" value="3"></option>
+            <option class="color4" value="4"></option>
+            <option class="color5" value="5"></option>
+            <option class="color6" value="6"></option>
+            <option class="color7" value="7"></option>
+            <option class="color8" value="8"></option>
+            <option class="color9" value="9"></option>
+            <option class="color10" value="10"></option>
+          </select>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col">
+          <select data-ng-model="updateProfilUserN.hair_type" class="profil-user-select-form">
+            <option value="" disabled selected>Type de Cheveux</option>
+            <option>Cheveux Raid</option>
+            <option>Cheveux Ondulés</option>
+            <option>Cheveux Bouclés-Frisé</option>
+            <option>Cheveux Crépus</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col">
+          <select data-ng-model="updateProfilUserN.hair_color" class="profil-user-select-form">
+            <option value="" disabled selected>Couleur de Cheveaux</option>
+            <option>Noir</option>
+            <option>Châtain Foncé</option>
+            <option>Châtain Clair</option>
+            <option>Blond Foncé</option>
+            <option>Blond Clair</option>
+            <option>Blond Très Clair</option>
+            <option>Roux</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col">
+          <ion-checkbox class="home-checkbox" data-ng-model="updateProfilUserN.neemstyler">Devenir NeemStyler</ion-checkbox>
+        </div>
+      </div>
+    </div>
+
+  </ion-content>
+
+  <div class="bar bar-footer">
+    <button class="footer-button" data-ng-click="updateProfilUser(updateProfilUserN)">Confirmer</button>
+  </div>
+</ion-view>
+

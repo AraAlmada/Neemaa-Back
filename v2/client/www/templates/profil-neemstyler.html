@@ -1,0 +1,112 @@
+<ion-view view-title="Neemaa">
+  <ion-content class="content-profil-neemstyler">
+    <div class="row">
+      <div class="col col-33">
+        <img src="img/profil_user_default.png" style="width: 100%;" />
+        <a>Editer</a>
+      </div>
+      <div class="col">
+        <div class="row">
+          <div class="col">
+            <input type="text" data-ng-model="updateProfilNeemStyler.firstname" class="profil-neem-form-text" placeholder="Prénom" />
+          </div>
+          <div class="col">
+            <input type="text" data-ng-model="updateProfilNeemStyler.lastname" class="profil-neem-form-text" placeholder="Nom" />
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <input type="text" data-ng-model="updateProfilNeemStyler.adress" class="profil-neem-form-text" placeholder="Adresse" />
+          </div>
+        </div>
+        <div class="row">
+          <div class="col col-33">
+            <input type="text" data-ng-model="updateProfilNeemStyler.cp" class="profil-neem-form-text" placeholder="Code Postal" />
+          </div>
+          <div class="col">
+            <input type="text" data-ng-model="updateProfilNeemStyler.city" class="profil-neem-form-text" placeholder="Ville" />
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <input type="tel" data-ng-model="updateProfilNeemStyler.telephone" class="profil-neem-form-text" placeholder="Téléphone" />
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <input type="email" data-ng-model="updateProfilNeemStyler.email" class="profil-neem-form-text" placeholder="Email" />
+          </div>
+        </div>
+        <div class="row">
+          <div class="col text-right">
+            <a>Changer de mot de passe</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col">
+        <H5>Ou se fait votre prestation ?</H5>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col col-50">
+        <ion-checkbox class="neem-checkbox" data-ng-checked="ifCheckedHome()" data-ng-click="checkHome()" data-ng-model="updateProfilNeemStyler.home">A domicile</ion-checkbox>
+      </div>
+      <div class="col col-50">
+        <ion-checkbox class="neem-checkbox" data-ng-checked="ifCheckedSaloon()" data-ng-click="checkSaloon()" data-ng-model="updateProfilNeemStyler.saloon">En salon</ion-checkbox>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <p>* Si vous vous déplacer à domicie, indiquer le(s) CP et le rayon maximum de déplacement :</p>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col">
+        <h5>Choisir les services que vous proposez et le prix correspondant à chacun :</h5>
+      </div>
+    </div>
+    <div class="row text-center">
+      <div class="col col-50">
+        <input type="text" data-ng-model="updateProfilNeemStyler.service" class="profil-neem-form-text" placeholder="Service" />
+      </div>
+      <div class="col col-33">
+        <input type="text" data-ng-model="updateProfilNeemStyler.price" class="profil-neem-form-text" placeholder="Prix" />
+      </div>
+      <div class="col col-10">
+        <i class="icon ion-plus"></i>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col">
+        <h5>Télécharger des photos de votre services</h5>
+      </div>
+    </div>
+    <div class="row text-center">
+      <div class="col col-15">
+        <img src="img/profil-neem-picture-service.png" style="width: 100%" />
+      </div>
+      <div class="col col-15">
+        <img src="img/profil-neem-picture-service.png" style="width: 100%" />
+      </div>
+      <div class="col col-15">
+        <img src="img/profil-neem-picture-service.png" style="width: 100%" />
+      </div>
+      <div class="col col-15">
+        <img src="img/profil-neem-picture-service.png" style="width: 100%" />
+      </div>
+      <div class="col col-15">
+        <img src="img/profil-neem-picture-service.png" style="width: 100%" />
+      </div>
+    </div>
+
+  </ion-content>
+
+  <div class="bar bar-footer bar-footer-neemstyler">
+    <button class="footer-button-neemstyler" data-ng-click="updateProfilNeemStylerN(updateProfilNeemStyler)">Confirmer</button>
+  </div>
+</ion-view>
